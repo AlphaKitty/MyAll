@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyl.home.mapper.UserMapper">
+    <insert id="addUser" parameterType="com.zyl.home.pojo.User">
+        insert into user (id, name) value (#{id}, #{name})
+    </insert>
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+    <select id="getAll" resultType="com.zyl.home.pojo.User">
+        select *
+        from user
+    </select>
+</mapper>
